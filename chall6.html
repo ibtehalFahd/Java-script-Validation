@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+   
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="newfile1.css" rel="stylesheet" type="text/css"/>
+         <link href="normalize.css" rel="stylesheet" type="text/css"/>
+          <link href="call6.css" rel="stylesheet" type="text/css"/>
+         <style>
+            
+            #unError,#fnError,#emailError,#cemailError,#passError,#cpassError{
+			color:red;
+			text-align:center;
+			} 
+            #strongRange{
+                margin: 0 auto;
+                            
+                        }
+             #type{
+                       text-align: center;
+                       color:grey;
+                        }
+              #preview-container {
+    margin: 0px auto;
+    padding: 40px;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+	width:50%;
+}
+
+#upload-dialog {
+    padding: 5px;
+    border: 1px solid #336699;
+    background-color: white;
+    color: #336699;
+    background: none;
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 2px;
+	width:80%;
+	margin:0px 29px;
+
+}
+
+#image-file {
+    display: none;
+}
+
+#preview-image {
+    display: none;
+    margin:0px 100px;
+    width: 80px;
+    border: 1px solid rgba(0,0,0,0.01);
+    border-radius: 2px;
+}
+
+#image-name {
+    display: none;
+    vertical-align: middle;
+    color: black;
+    background-color: whitesmoke;
+    margin: 0 15px;
+}
+
+#upload-button {
+    padding: 5px;
+    border: 1px solid #336699;
+    background-color: #336699;
+    color: white;
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    display: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#cancel-image {
+    display: none;
+    vertical-align: middle;
+    padding: 0px;
+    border: none;
+    color: #777777;
+    background-color: white;
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    vertical-align: middle;
+    cursor: pointer;
+    margin: 0 0 0 15px;
+}
+   </style>
+    </head>
+    <body>
+        
+        <section class="border">
+           
+       
+           
+		<center><h1>Challenge 6</h1></center>
+		<form action="#" method="">
+                    
+		<fieldset>
+		<legend >Create Account<span>This form is required to login our site</span></legend>
+                
+
+
+		<label for="un">User name:
+                    <input type="text" name="un" placeholder="User name..." id="un">
+                </label>
+                <p id="unError"> </p>
+                <label for="fn">Full name:
+                <input type="text" name="fn" placeholder="Full name..." id="fn"></label>
+				 <p id="fnError"> </p>
+		<label for="email">Email
+                <input type="email" name="email" id="email" placeholder="Email..."></label>
+				<p id="emailError"> </p>
+                <label for="cemail">Confirm Email
+                <input type="email" name="cemail" id="cemail" placeholder="confirm Email..."></label>
+		<p id="cemailError"> </p>
+		<label for="pass">Password:
+                <input type="password" name="pass" id="pass" placeholder="Password..."></label>
+				<p id="passError"> </p>
+                                <p id="type"></p>
+                                <div id="strongRange"></div>
+                <label for="cpass">Confirm Password:
+                <input type="password" name="cpass"  id="cpass" placeholder="Confirm Password..."></label>
+				<p id="cpassError"> </p>
+				<div id="preview-container">
+                     <button id="upload-dialog">Choose Image</button>
+                     <input type="file" id="image-file" name="image" accept="image/jpg,image/png" />
+                     <img id="preview-image" />
+                     <span id="image-name"></span>
+<!--                     <button id="upload-button">Upload</button>
+                     <button id="cancel-image">Cancel</button>-->
+               </div>
+                
+               
+                <input type="submit" name="Create Account" value="Create Account">
+                </fieldset>
+                    </form>
+                
+                 </section>
+        <footer></footer>
+        <script>
+            var un=document.getElementById("un");
+			
+            un.addEventListener("input",function (  ) {  
+                 un.style.cssText="background-color:beige";
+				 var key = event.keyCode;
+				 if(un.value.length>19)
+				{
+					document.getElementById("unError").innerText="length must be <=20";
+					event.preventDefault();
+					//return false;
+				}
+				else if(key === 32) {
+						document.getElementById("unError").innerText="space not allowed here ";
+						event.preventDefault();
+							}
+				else{
+				document.getElementById("unError").innerText="";
+				}
+            
+				});
+            un.addEventListener("keypress",function (  ) {  
+                 un.style.cssText="background-color:beige";
+				 var key = event.keyCode;
+				 if(un.value.length>19)
+				{
+					document.getElementById("unError").innerText="length must be <=20";
+					event.preventDefault();
+					//return false;
+				}
+				else if(key === 32) {
+						document.getElementById("unError").innerText="space not allowed here ";
+						event.preventDefault();
+							}
+				else{
+				document.getElementById("unError").innerText="";
+				}
+            
+				});
+	//////////////////////////////////////////////////////////////	
+             var fn=document.getElementById("fn");
+            var numberOfSpace=0;
+			 fn.addEventListener("input",function (  ) {  
+                         fn.style.cssText="background-color:beige";
+				 
+				var key = event.keyCode;
+				
+				if(fn.value.split(" ").length-1>=5 ) {
+					document.getElementById("fnError").innerText="you exceed number of available names =5";
+						event.preventDefault();
+							}
+				else{
+				document.getElementById("fnError").innerText="";
+				}
+				
+            
+				});
+				
+			
+				
+				
+	///////////////////////////////////////////////////////////////////////
+            var email=document.getElementById("email");
+            
+			
+			email.addEventListener("input",function (  ) {  
+                 email.style.cssText="background-color:beige";
+				 
+				
+				var x =email.value;
+				var atpos = x.indexOf("@");
+				var dotpos = x.lastIndexOf(".");
+				if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+				document.getElementById("emailError").innerText="invalid email address";
+				return false;
+				}
+				else
+				{
+				document.getElementById("emailError").innerText="";
+				}
+					});
+                       
+				
+				
+				
+     /////////////////////////////////////////////////////////////////////////
+            var cemail=document.getElementById("cemail");
+			
+			cemail.addEventListener("input",function (  ) {  
+                 cemail.style.cssText="background-color:beige";
+				 
+				
+				
+				var Semail =document.getElementById("email").value.slice(0,cemail.value.length);
+				document.getElementById("cemailError").innerText=email;
+				
+				if (cemail.value!=Semail) {
+				document.getElementById("cemailError").innerText="email not match";
+				return false;
+				}
+				else
+				{
+				document.getElementById("cemailError").innerText="";
+				}
+					});
+					
+	//////////////////////////////////////////////////////////////////////////////
+            
+            var pass=document.getElementById("pass");
+            
+            
+            pass.addEventListener("keypress",function (){
+                  if(pass.value.length>15)
+				{
+					document.getElementById("passError").innerText="too much charchter max is 15 ";
+					event.preventDefault();
+					//return false;
+				}
+            });
+            
+            
+	    pass.addEventListener("input",function (  ) {  
+                 pass.style.cssText="background-color:beige";
+                  var hr=document.getElementById("strongRange");
+                 // var type=document.getElementById("type");
+				
+				 if(pass.value.length<8)
+				{
+					document.getElementById("passError").innerText="password must contain at least 8 charchters ";
+                                    document.getElementById("type").innerText="Weeak password";
+                                    hr.style.cssText="background-color:red;width:20%;height:7px;";
+					
+					//return false;
+				}
+                                else if(pass.value.length<12){
+                                    document.getElementById("passError").innerText="";
+                                     document.getElementById("type").innerText="medium password";
+                                    hr.style.cssText="background-color:orange;width:40%;height:7px;";
+                                    
+                                }
+                                else if(pass.value.length<15){
+                                    document.getElementById("passError").innerText="";
+                                     document.getElementById("type").innerText="strong password"; 
+                                    hr.style.cssText="background-color:green;width:60%;height:7px;";
+                                    
+                                }
+                               
+//                                else if(pass.value.length===null)
+//				{
+//					document.getElementById("passError").innerText="";
+//					
+//				}
+				else
+				document.getElementById("passError").innerText="";
+                            
+                                
+				
+					});
+	///////////////////////////////////////////////////////////////////////////////				
+            var cpass=document.getElementById("cpass");
+            
+            cpass.addEventListener("input",function (  ) {  
+                 cpass.style.cssText="background-color:beige";
+				 
+				
+				
+				var pass =document.getElementById("pass").value.slice(0,cpass.value.length);
+				//document.getElementById("cpassError").innerText=pass;
+				
+				if (cpass.value!=pass) {
+				document.getElementById("cpassError").innerText="password not match";
+				return false;
+				}
+				else
+				{
+				document.getElementById("cpassError").innerText="";
+				}
+					});
+            
+        
+var _PREVIEW_URL;
+
+/* Show Select File dialog */
+document.getElementById("upload-dialog").addEventListener('click', function() {
+    document.getElementById("image-file").click();
+});
+
+/* Selected File has changed */
+document.getElementById("image-file").addEventListener('change', function() {
+    // user selected file
+    var file = this.files[0];
+
+    // allowed MIME types
+    var mime_types = [ 'image/jpeg', 'image/png' ];
+    
+    // validate MIME
+    if(mime_types.indexOf(file.type) == -1) {
+        alert('Error : Incorrect file type');
+        return;
+    }
+
+    // validate file size
+    if(file.size > 2*1024*1024) {
+        alert('Error : Exceeded size 2MB');
+        return;
+    }
+
+    // validation is successful
+
+    // hide upload dialog button
+    document.getElementById("upload-dialog").style.display = 'none';
+    
+    // set name of the file
+    document.getElementById("image-name").innerText = file.name;
+    document.getElementById("image-name").style.display = 'inline-block';
+
+    // local url
+    _PREVIEW_URL = URL.createObjectURL(file);
+
+    // set src of image and show
+    document.getElementById("preview-image").setAttribute('src', _PREVIEW_URL);
+    document.getElementById("preview-image").style.display = 'inline-block';
+
+    
+    // show cancel and upload buttons now
+    document.getElementById("cancel-image").style.display = 'inline-block';
+    document.getElementById("upload-button").style.display = 'inline-block';
+});
+
+/* Reset file input */
+document.getElementById("cancel-image").addEventListener('click', function() {
+    // destroy previous local url
+    URL.revokeObjectURL(_PREVIEW_URL);
+
+    // show upload dialog button
+    document.getElementById("upload-dialog").style.display = 'inline-block';
+
+    // reset to no selection
+    document.getElementById("image-file").value = '';
+
+    // hide elements that are not required
+    document.getElementById("image-name").style.display = 'none';
+    document.getElementById("preview-image").style.display = 'none';
+    document.getElementById("cancel-image").style.display = 'none';
+    document.getElementById("upload-button").style.display = 'none';
+});
+
+/* Upload file to server */
+document.getElementById("upload-button").addEventListener('click', function() {
+    // AJAX request to server
+    alert('This will upload file to server');
+});
+
+</script>
+    </body>
+</html>

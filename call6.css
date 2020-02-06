@@ -1,0 +1,85 @@
+fieldset{
+    width: 550px;
+    margin: 0 auto;
+    border-radius: 10px;
+    /*background: radial-gradient(white,teal);*/
+    /*background-color:teal;*/
+    /*padding: px;*/
+    
+}
+fieldset legend{
+    padding: 10px 10px;
+    border:1px black solid;
+    border-radius: 10px;
+    font-size: 20px;
+    /*background: linear-gradient(teal,white);*/
+    background-color:whitesmoke;
+    /*color: white;*/
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+textarea
+{
+    display: block;
+    width: 61%;
+    margin:-20px 0px 2px 133px;
+    
+    
+}
+input[type="submit"]{
+    margin:  20px 168px;
+     background: linear-gradient(teal,white);
+     height:40px;
+     width: 40%;
+}
+fieldset label{
+    padding: 5px;
+    width: 75%;
+    display: table;
+    margin: 10px auto;
+    border:1px aliceblue solid;
+    background: whitesmoke;
+    color:teal;
+    font-weight: bold;
+    /*font-family:*/
+    /*margin-top: 60px;*/
+}
+fieldset span{
+    background-color:lightblue;
+    padding: 5px;
+    border: 2px white solid;
+    border-radius: 10px;
+    text-align: center;
+    color:white;
+    /*visibility: hidden;*/
+    display: none;
+    margin: 0 8px;
+    font-size: 13px;
+    /*margin-top: -40;*/
+}
+legend:hover span{
+    display: inline;
+}
+/*fieldset:hover  span{
+    display: inline;
+}*/
+/*@media screen and (min-width:480px){
+    body{
+        background-color: wheat;
+    }
+}
+@media screen and (min-width:1200px){
+    body{
+        background-color: whitesmoke;
+    }
+}
+@media screen and (min-width:720px){
+    body{
+        background-color: honeydew;
+    }
+}*/
+
